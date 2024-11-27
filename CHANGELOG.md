@@ -2,3 +2,4 @@
 - add basic library structure
 - add Stack
 - add basic documentation
+- add Queue
