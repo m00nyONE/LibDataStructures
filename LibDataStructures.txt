@@ -11,7 +11,9 @@ LibDataStructures.lua
 
 # data structures
 datastructures/Stack.lua
+datastructures/Heap.lua
 
 # tests
 test/Stack.lua
+test/Heap.lua
 
