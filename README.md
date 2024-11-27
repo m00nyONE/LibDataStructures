@@ -16,6 +16,16 @@
     - Check if the stack is empty.
     - Get the current size of the stack.
 
+- **Queue**:
+  - Enqueue adds an element to the end of the Queue
+  - Dequeue returns the first element in the Queue and deletes it
+  - Peek returns the first element in the Queue
+  - IsEmpty checks if the Queue is empty
+  - Len returns the amount of elements in the Queue
+  - Iterate creates an iterator over all elements
+  - Clear removes all elements in the Queue
+  - Copy creates a shallow copy of the current Queue
+
 ---
 
 ## Installation
