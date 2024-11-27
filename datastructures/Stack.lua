@@ -1,7 +1,6 @@
 LibDataStructures = LibDataStructures or {}
 
 local LDS = LibDataStructures
-
 LDS.Stack = {}
 
 local Stack = LDS.Stack
