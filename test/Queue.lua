@@ -63,7 +63,7 @@ LDS.Tests.Queue = function()
     assert(values[1] == 1 and values[2] == 2 and values[3] == 3, "Iterate should traverse in queue order (front to back)")
 
     -- Test: Enqueue with nil value
-    local success, err = pcall(function() testQueue:Enqueue(nil) end)
+    local success, _ = pcall(function() testQueue:Enqueue(nil) end)
     assert(not success, "Enqueuing nil value should raise an error")
 
     d("All queue tests passed!")
