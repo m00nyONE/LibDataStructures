@@ -7,14 +7,14 @@
 ## Features
 
 - **Stack**:
-    - Push values onto the stack.
-    - Pop values from the stack.
-    - Peek at the top value without removing it.
-    - Clear all values from the stack.
-    - Clone the stack for independent manipulation.
-    - Iterate over stack elements from top to bottom.
-    - Check if the stack is empty.
-    - Get the current size of the stack.
+  - Push values onto the stack.
+  - Pop values from the stack.
+  - Peek at the top value without removing it.
+  - Clear all values from the stack.
+  - Clone the stack for independent manipulation.
+  - Iterate over stack elements from top to bottom.
+  - Check if the stack is empty.
+  - Get the current size of the stack.
 
 - **Queue**:
   - Enqueue adds an element to the end of the Queue
