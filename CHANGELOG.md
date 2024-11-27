@@ -3,3 +3,4 @@
 - add Stack
 - add basic documentation
 - add Queue
+- add functionality and performance tests

@@ -2,7 +2,10 @@ LibDataStructures = LibDataStructures or {}
 local LDS = LibDataStructures
 
 LDS.Tests = LDS.Tests or {}
-LDS.Tests.Stack = function()
+LDS.Tests.Stack = {}
+
+-- /script LibDataStructures.Tests.Stack.Functionality()
+LDS.Tests.Stack.Functionality = function()
     local testStack = LDS.Stack:New()
 
     -- Test: New stack is empty
@@ -67,4 +70,46 @@ LDS.Tests.Stack = function()
     assert(not success, "Pushing nil value should raise an error")
 
     d("All tests passed!")
+end
+
+-- /script LibDataStructures.Tests.Stack.Performance()
+LDS.Tests.Stack.Performance = function()
+    local iterations = LDS.Tests.PERFORMANCE_ITERATIONS
+    local measureTime = LDS.Tests.measureTime
+    local testStack = LDS.Stack:New()
+
+    -- Test: Push
+    measureTime("Push Performance", function()
+        for i = 1, iterations do
+            testStack:Push(i)
+        end
+    end)
+
+    -- Test: Peek
+    measureTime("Peek Performance", function()
+        for i = 1, iterations do
+            local _ = testStack:Peek()
+        end
+    end)
+
+    -- Test: Pop
+    measureTime("Pop Performance", function()
+        for i = 1, iterations do
+            testStack:Pop()
+        end
+    end)
+
+    -- Test: Iterate
+    for i = 1, iterations do
+        testStack:Push(i)
+    end
+    measureTime("Iterate Performance", function()
+        for _ in testStack:Iterate() do
+            -- Nichts tun, nur iterieren
+        end
+    end)
+
+    -- Cleanup
+    testStack:Clear()
+    d("Stack Performance Test completed!")
 end

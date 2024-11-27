@@ -2,7 +2,10 @@ LibDataStructures = LibDataStructures or {}
 local LDS = LibDataStructures
 
 LDS.Tests = LDS.Tests or {}
-LDS.Tests.Queue = function()
+LDS.Tests.Queue = {}
+
+-- /script LibDataStructures.Tests.Queue.Functionality()
+LDS.Tests.Queue.Functionality = function()
     local testQueue = LDS.Queue:New()
 
     -- Test: New queue is empty
@@ -67,4 +70,46 @@ LDS.Tests.Queue = function()
     assert(not success, "Enqueuing nil value should raise an error")
 
     d("All queue tests passed!")
+end
+
+-- /script LibDataStructures.Tests.Queue.Performance()
+LDS.Tests.Queue.Performance = function()
+    local iterations = LDS.Tests.PERFORMANCE_ITERATIONS
+    local measureTime = LDS.Tests.measureTime
+    local testQueue = LDS.Queue:New()
+
+    -- Test: Enqueue
+    measureTime("Enqueue Performance", function()
+        for i = 1, iterations do
+            testQueue:Enqueue(i)
+        end
+    end)
+
+    -- Test: Peek
+    measureTime("Peek Performance", function()
+        for i = 1, iterations do
+            local _ = testQueue:Peek()
+        end
+    end)
+
+    -- Test: Dequeue
+    measureTime("Dequeue Performance", function()
+        for i = 1, iterations do
+            testQueue:Dequeue()
+        end
+    end)
+
+    -- Test: Iterate
+    for i = 1, iterations do
+        testQueue:Enqueue(i)
+    end
+    measureTime("Iterate Performance", function()
+        for _ in testQueue:Iterate() do
+            -- do nothing, just iterate
+        end
+    end)
+
+    -- Cleanup
+    testQueue:Clear()
+    d("Queue Performance Test completed!")
 end
