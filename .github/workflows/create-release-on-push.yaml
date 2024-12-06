@@ -65,6 +65,7 @@ jobs:
             -F "id=${ADDON_ID}" \
             -F "version=${{ env.BUILD_DATE_WITH_DOT }}" \
             -F "updatefile=@${{ env.REPO_NAME }}-${{ env.BUILD_DATE_WITH_HYPHEN }}.zip" \
-            -F "description=$(cat README.md)" \ 
             -F "changelog=$(cat CHANGELOG.md)" \
             https://api.esoui.com/addons/update
+
+##          -F "description=$(cat README.md)" \

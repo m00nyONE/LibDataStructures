@@ -1,8 +1,6 @@
 # TODO:
 
 ### datastructures
-- BinaryTree
-- BinarySearchTree
 - Queue
 - Deque
 - CircularQueue

@@ -12,9 +12,11 @@ LibDataStructures.lua
 # data structures
 datastructures/Stack.lua
 datastructures/Queue.lua
+datastructures/BinaryTree.lua
 
 # tests
 test/Tests.lua
 test/Stack.lua
 test/Queue.lua
+test/BinaryTree.lua
 
