@@ -29,7 +29,7 @@ jobs:
 
       - name: Replace placeholders with current date
         run: |
-          sed -i "s/version = \"dev\"/version = ${{ env.BUILD_DATE_WITH_DOT }}/g" ${{ env.REPO_NAME }}.lua
+          sed -i "s/version = \"dev\"/version = \"${{ env.BUILD_DATE_WITH_DOT }}\"/g" ${{ env.REPO_NAME }}.lua
           sed -i "s/## Version: dev/## Version: ${{ env.BUILD_DATE_WITH_DOT }}/g" ${{ env.REPO_NAME }}.txt
           sed -i "s/## AddOnVersion: 00000000/## AddOnVersion: ${{ env.BUILD_DATE_NUMBER }}/g" ${{ env.REPO_NAME }}.txt
 
